@@ -27,7 +27,7 @@ return (ct);
 int is_palindrome(listint_t **head)
 {
 listint_t *p = *head;
-int list[lent(*head) / 2];
+int *list = malloc((lent(*head) / 2) * sizeof(int));
 int ct = 0;
 int i;
 
