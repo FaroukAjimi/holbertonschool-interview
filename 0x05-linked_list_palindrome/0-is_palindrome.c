@@ -31,6 +31,8 @@ int list[lent(*head) / 2];
 int ct = 0;
 int i;
 
+if (!(*head))
+return (1);
 while (ct != lent(*head) / 2)
 {
 list[ct] = p->n;
