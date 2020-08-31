@@ -46,9 +46,11 @@ for (i = (lent(*head) / 2) - 1 ; i != -1; i--)
 {
 if (p->n != list[i])
 {
+free(list);
 return (0);
 }
 p = p->next;
 }
+free(list);
 return (1);
 }
