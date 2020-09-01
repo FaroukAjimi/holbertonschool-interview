@@ -31,7 +31,7 @@ int *list = malloc((lent(*head) / 2) * sizeof(int));
 int ct = 0;
 int i;
 
-if ((*head)->next == NULL)
+if ((!(*head)->next) && !(*head))
 return (1);
 while (ct != lent(*head) / 2)
 {
