@@ -31,7 +31,7 @@ int *list = malloc((lent(*head) / 2) * sizeof(int));
 int ct = 0;
 int i;
 
-if (head == NULL && *head == NULL)
+if (head == NULL && *head == NULL && (*head)->next == NULL)
 return (1);
 while (ct != lent(*head) / 2)
 {
@@ -39,7 +39,6 @@ list[ct] = p->n;
 p = p->next;
 ct++;
 }
-
 if (lent(*head) % 2 != 0)
 p = p->next;
 for (i = (lent(*head) / 2) - 1 ; i != -1; i--)
