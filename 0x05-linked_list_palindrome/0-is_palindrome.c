@@ -31,8 +31,10 @@ int *list = malloc((lent(*head) / 2) * sizeof(int));
 int ct = 0;
 int i;
 
-if (head == NULL && *head == NULL && (*head)->next == NULL)
-return (1);
+if (!head)
+return (0);
+if (!(*head))
+return(1);
 while (ct != lent(*head) / 2)
 {
 list[ct] = p->n;
