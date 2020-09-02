@@ -5,7 +5,7 @@
 import sys
 
 i = 0
-lis = [200, 301, 400, 401, 403, 404, 405, 500]
+lis = ['200', '301', '400', '401', '403', '404', '405', '500']
 su = 0
 new = [0, 0, 0, 0, 0, 0, 0, 0]
 
@@ -16,8 +16,8 @@ try:
         i = i + 1
         if len(s) < 2:
             pass
-        if int(s[-2]) in lis:
-            x = lis.index(int(s[-2]))
+        if s[-2] in lis:
+            x = lis.index(s[-2])
             new[x] = new[x] + 1
         if i == 10:
             i = 0
@@ -28,5 +28,6 @@ try:
 except Exception:
     pass
 finally:
+    print("File size: {}".format(su))
     for x in range(8):
-        print(lis[x], new[x])
+        print("{}: {}".format(lis[x], new[x]))
