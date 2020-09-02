@@ -29,4 +29,5 @@ except Exception:
 finally:
     print("File size: {}".format(su))
     for x in range(8):
-        print("{}: {}".format(lis[x], new[x]))
+        if new[x] != 0:
+            print("{}: {}".format(lis[x], new[x]))
