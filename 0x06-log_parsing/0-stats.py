@@ -14,6 +14,8 @@ try:
         s = line.split()
         su = su + int(s[-1])
         i = i + 1
+        if len(s) < 2:
+            pass
         if int(s[-2]) in lis:
             x = lis.index(int(s[-2]))
             new[x] = new[x] + 1
