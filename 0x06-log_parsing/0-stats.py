@@ -14,17 +14,16 @@ try:
         s = line.split()
         su = su + int(s[-1])
         i = i + 1
-        if len(s) < 2:
-            pass
-        if s[-2] in lis:
-            x = lis.index(s[-2])
-            new[x] = new[x] + 1
-        if i == 10:
-            i = 0
-            print("File size: {}".format(su))
-            for x in range(8):
-                if new[x] != 0:
-                    print('{}: {}'.format(lis[x], new[x]))
+        if len(s) > 2:
+            if s[-2] in lis:
+                x = lis.index(s[-2])
+                new[x] = new[x] + 1
+            if i == 10:
+                i = 0
+                print("File size: {}".format(su))
+                for x in range(8):
+                    if new[x] != 0:
+                        print('{}: {}'.format(lis[x], new[x]))
 except Exception:
     pass
 finally:
