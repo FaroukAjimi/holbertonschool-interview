@@ -23,9 +23,8 @@ try:
             i = 0
             print("File size: {}".format(su))
             for x in range(8):
-                if new[x] == 0:
-                    pass
-                print('{}: {}'.format(lis[x], new[x]))
+                if new[x] != 0:
+                    print('{}: {}'.format(lis[x], new[x]))
 except Exception:
     pass
 finally:
