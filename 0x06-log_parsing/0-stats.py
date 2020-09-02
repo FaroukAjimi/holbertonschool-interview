@@ -19,8 +19,10 @@ try:
             new[x] = new[x] + 1
         if i == 10:
             i = 0
-            print("File size:", su)
+            print("File size: {}".format(su))
             for x in range(8):
+                if new[x] == 0:
+                    pass
                 print('{}: {}'.format(lis[x], new[x]))
 except Exception:
     pass
