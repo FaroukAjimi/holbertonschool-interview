@@ -14,10 +14,10 @@ try:
         s = line.split()
         if len(s) > 2:
             if s[-2] in lis:
-                su = su + int(s[-1])
                 x = lis.index(s[-2])
                 new[x] = new[x] + 1
-                i += 1
+            i += 1
+            su = su + int(s[-1])
         if i == 10:
             i = 0
             print("File size: {}".format(su))
