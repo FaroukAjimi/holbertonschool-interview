@@ -20,8 +20,6 @@ fast = fast->next->next;
 slow = slow->next;
 if (fast == slow)
 return (1);
-if (fast == NULL)
-return (0);
 }
-return (0)
+return (0);
 }
