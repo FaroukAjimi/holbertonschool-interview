@@ -17,6 +17,7 @@ def canUnlockAll(boxes):
     for i in new:
         if i not in uniq:
             uniq.append(i)
+    print(uniq)
     if (uniq == rng):
         return(True)
     else:
