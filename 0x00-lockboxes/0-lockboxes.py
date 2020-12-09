@@ -1,6 +1,11 @@
 #!/usr/bin/python3
+"""lockboxes holberton interview"""
+
 
 def canUnlockAll(boxes):
+    """function canUnlockAll
+      variable: boxes
+      Return Bool"""
     lb = len(boxes)
     rng = [*range(lb)]
     uniq = []
