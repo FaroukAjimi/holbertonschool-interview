@@ -7,9 +7,11 @@ def canUnlockAll(boxes):
       variable: boxes
       Return Bool"""
     lb = len(boxes)
-    rng = [*range(lb)]
+    rng = []
     uniq = []
     new = [0]
+    for i in range(lb):
+        rng.append(i)
     for i in range(lb - 1):
         for y in range(len(boxes[new[i]])):
             new.append(boxes[new[i]][y])
