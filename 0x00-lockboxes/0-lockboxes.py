@@ -12,7 +12,6 @@ def canUnlockAll(boxes):
     new = [0]
     for i in range(lb):
         rng.append(i)
-    print(rng)
     try:
         for i in range(lb - 1):
             for y in range(len(boxes[new[i]])):
