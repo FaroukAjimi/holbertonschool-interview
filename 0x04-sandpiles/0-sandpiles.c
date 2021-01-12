@@ -3,7 +3,8 @@
 
 #include "sandpiles.h"
 /**
-*
+* print_grid - print 3X3 grid
+* @grid: int
 */
 static void print_grid(int grid[3][3])
 {
@@ -21,11 +22,13 @@ static void print_grid(int grid[3][3])
     }
 }
 /**
-*
+* cpgrid - fill nwgrid with grid's data
+* @grid: original grid
+* @nwgrid: the grid copy 
 */
 void cpgrid(int grid[3][3], int nwgrid[3][3])
 {
-  int i , y;
+  int i, y;
   for (i = 0; i < 3; i++)
   for (y = 0; y < 3; y++)
   {
@@ -33,8 +36,9 @@ void cpgrid(int grid[3][3], int nwgrid[3][3])
   }
 }
 /**
-  *
-  *
+  * sandpiles_sum - sum and topple 2 grids
+  * @grid1: sandpile1
+  * @grid2: sandpile2
   */
 void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 {
@@ -56,14 +60,14 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
         {
           test = 1;
           grid1[i][y] = grid1[i][y] - 4;
-          if (i-1 >= 0)
-            grid1[i-1][y]++;
-          if (i+1 <= 2)
-            grid1[i+1][y]++;
-          if (y-1 >= 0)
-            grid1[i][y-1]++; 
-          if (y+1 <= 2)
-            grid1[i][y+1]++;
+          if (i - 1 >= 0)
+            grid1[i - 1][y]++;
+          if (i + 1 <= 2)
+            grid1[i + 1][y]++;
+          if (y - 1 >= 0)
+            grid1[i][y - 1]++; 
+          if (y + 1 <= 2)
+            grid1[i][y + 1]++;
         }
       }
     if (test == 0)
