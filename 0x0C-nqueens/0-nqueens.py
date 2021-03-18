@@ -2,6 +2,7 @@
 import sys
 """nqueens algo"""
 
+
 def ins(n):
     board = []
     for i in range(n):
