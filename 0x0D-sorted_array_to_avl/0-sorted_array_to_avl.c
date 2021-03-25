@@ -26,7 +26,7 @@ avl_t *mknode(int *array, avl_t *head, int beg, int lst)
   new->n = array[hlf];
   new->parent = head;
   new->left = mknode(array, new, beg, hlf - 1);
-  new->right = mknode(array, new, beg, hlf + 1);
+  new->right = mknode(array, new, hlf + 1, lst);
   
   return(new);
 }
