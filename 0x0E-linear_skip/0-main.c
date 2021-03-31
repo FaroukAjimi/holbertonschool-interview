@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 #include "search.h"
 
 /**
@@ -9,6 +10,14 @@
  */
 int main(void)
 {
-  printf("Found at index: %p\n", (void *) linear_skip(NULL, 0));
+  skiplist_t *head, *res;
+  int array[23] = {
+    0, 1, 2, 3, 4, 7, 12, 15, 18, 19, 23, 53, 61, 62, 100, 100, 100, 111, 122, 123, 145, 155, 260
+  };
+
+  head = create_skiplist(array, 23);
+  res = linear_skip(head, 123456789);
+  printf("Found at index: %p\n", (void *) res);
+  free_skiplist(head);
   return (0);
 }
