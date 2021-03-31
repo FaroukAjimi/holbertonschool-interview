@@ -29,7 +29,7 @@ printf("Value checked at index [%lu] = [%d]\n", f->index, f->n);
 if (f->n == value)
 return (f);
 if (f->next == list)
-  return (NULL);
+return (NULL);
 }
 }
 if (!list->express)
