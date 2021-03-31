@@ -16,7 +16,7 @@ int main(void)
 {
   skiplist_t *list, *res;
   int array[] = {
-    0, 1, 2, 3, 4, 7, 12, 15, 53, 53, 53, 53, 53, 62, 76, 99
+    0, 1, 2, 3, 4, 7, 12, 15, 53, 54, 57, 58, 59, 62, 76, 99
   };
   size_t size = sizeof(array) / sizeof(array[0]);
 

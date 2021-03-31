@@ -20,6 +20,8 @@ return (NULL);
 for (list = list->express; list; list = list->express)
 {
 printf("Value checked at index [%lu] = [%d]\n", list->index, list->n);
+if (list->n == value)
+return(list);
 if (value >= prev && value <= list->n)
 {
 printf("Value found between indexes [%lu] and [%lu]\n", f->index, list->index);
