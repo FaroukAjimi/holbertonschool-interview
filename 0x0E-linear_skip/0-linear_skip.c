@@ -45,8 +45,6 @@ break;
 }
 }
 prev = list->n;
-if (value == prev)
-printf("Value checked at index [%lu] = [%d]\n", list->index, list->n);
 f = list;
 }
 return (list);
