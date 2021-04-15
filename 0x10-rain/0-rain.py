@@ -1,15 +1,18 @@
 #!/usr/bin/python3
-
+"""Rain interview"""
 
 
 def low(l, r):
+    """lower side"""
     if (r >= l):
         return(l)
     else:
         return(r)
     return(r)
 
+
 def rain(walls):
+    """total rain calculator"""
     total = 0
     lac = 0
     for i in range(1, len(walls) - 1):
