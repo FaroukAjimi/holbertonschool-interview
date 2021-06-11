@@ -1,0 +1,41 @@
+#!/usr/bin/python3
+"""
+count it
+"""
+import requests
+
+def count_words(subreddit, word_list, update="", words={}):
+    REDDIT = "https://www.reddit.com/"
+    HEADERS = {'user-agent': 'my-app/0.0.0.1'}
+    if not words:
+        for word in word_list:
+            words[word] = 0
+    if update is None:
+        word_list = [[key, value] for key, value in words.items()]
+        word_list =  sorted(word_list, key=lambda x: (-x[1], x[0]))
+        for w in word_list:
+            if w[1]:
+                print("{}: {}".format(w[0].lower(), w[1]))
+        return None
+    url = REDDIT + "r/{}/hot/.json".format(subreddit)
+    p = {'limit': 100, 'after': update}
+    res = requests.get(url, headers=HEADERS, params=p, allow_redirects=False)
+    if res.status_code != 200:
+        return None
+    try:
+        js = res.json()
+    except ValueError:
+        return None
+    try:
+        data = js.get("data")
+        update = data.get("after")
+        childs = data.get("children")
+        for c in childs:
+            post = child.get("data")
+            title = post.get("title")
+            lower = [s.lower() for s in title.split(' ')]
+            for w in word_list:
+                words[w] += lower.count(w.lower())
+    except Exception:
+        return None
+    count_words(subreddit, word_list, after, words)
