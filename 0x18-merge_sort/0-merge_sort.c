@@ -1,0 +1,77 @@
+#include "sort.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <stddef.h>
+/**
+ * mrg - merg and sort two lists
+ * @array: array
+ * @right: right list
+ * @left: left list
+ * @size: size of list
+ */
+void mrg(int *array, int *right, int *left, size_t size)
+{
+int l, r, i = 0, j = 0, y = 0;
+
+l = size / 2;
+r = size - l;
+while (i < l && j < r)
+{
+if (left[i] <= right[j])
+{
+array[y] = left[i];
+i++;
+}
+else
+{
+array[y] = right[j];
+j++;
+}
+y++;
+}
+while (i < l)
+{
+array[y] = left[i];
+i++;
+y++;
+}
+while (j < r)
+{
+array[y] = right[j];
+j++;
+y++;
+}
+printf("Merging...\n");
+printf("[left]: ");
+print_array(left, l);
+printf("[right]: ");
+print_array(right, r);
+printf("[Done]: ");
+print_array(array, size);
+}
+
+/**
+ * merge_sort - Function that sorts an array of integers
+ * in ascending order using the Merge Sort algorithm
+ * @array: array
+ * @size: size of array
+ */
+void merge_sort(int *array, size_t size)
+{
+size_t mid;
+size_t i;
+int right[50], left[50];
+mid = size / 2;
+if (size < 2 || array == NULL)
+return;
+
+for (i = 0; i < mid; i++)
+left[i] = array[i];
+
+for (i = mid;  i < size; i++)
+right[i - mid] = array[i];
+
+merge_sort(left, mid);
+merge_sort(right, size - mid);
+mrg(array, right, left, size);
+}
