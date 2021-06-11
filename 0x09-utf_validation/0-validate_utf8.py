@@ -1,0 +1,29 @@
+#!/usr/bin/pyhton3
+"""
+utf8 vald
+"""
+
+
+def validUTF8(data):
+    """validutf8 - function
+    var : data
+    """
+    b = 0
+    for itm in data:
+        r = format(itm, '#010b')[-8:]
+        if b == 0:
+            for bit in r:
+                if bit == '0':
+                    break
+                b = b + 1
+            if b == 0:
+                continue
+            if b == 1 or b > 4:
+                return False
+        else:
+            if not(r[0] == '1' and r[1] == '0'):
+                return False
+        b = b - 1
+    if b == 0:
+        return True
+    return False
