@@ -6,7 +6,10 @@ Function File _ makechange(coins, total)
 def makeChange(coins, total):
     s = 0
     t = 0
-    checked = True
+    if not coins or coins is None:
+        return -1
+    if total <= 0:
+        return -1
     coins.sort(reverse=True)
     i = 0
     while i <= len(coins) - 1: 
