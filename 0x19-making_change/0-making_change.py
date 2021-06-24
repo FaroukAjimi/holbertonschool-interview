@@ -13,7 +13,7 @@ def makeChange(coins, total):
     if not coins or coins is None:
         return -1
     if total <= 0:
-        return -1
+        return 0
     coins.sort(reverse=True)
     i = 0
     while i <= len(coins) - 1:
