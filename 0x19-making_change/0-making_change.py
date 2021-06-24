@@ -12,7 +12,7 @@ def makeChange(coins, total):
         return -1
     coins.sort(reverse=True)
     i = 0
-    while i <= len(coins) - 1: 
+    while i <= len(coins): 
         if (s + coins[i] <= total):
             s += coins[i]
             t += 1 
@@ -24,3 +24,4 @@ def makeChange(coins, total):
         return(0)
     if s != total:
         return(-1)
+    return(-1)
