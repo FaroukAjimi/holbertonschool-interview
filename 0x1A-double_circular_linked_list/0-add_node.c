@@ -34,7 +34,7 @@ new->prev = new;
 }
 else
 {
-new->next = *list;
+new->next = (*list);
 new->prev = (*list)->prev;
 (*list)->prev->next = new;
 (*list)->prev = new;
