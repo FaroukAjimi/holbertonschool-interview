@@ -1,0 +1,24 @@
+#!/usr/bin/python3
+"""
+0-island_permimeter
+"""
+
+
+def island_perimeter(grid):
+    s = 0
+    n = len(grid)
+    if n == 0 or n > 100:
+        return 0
+    m = len(grid[0])
+    for i in range(n):
+        for j in range(m):
+            if (grid[i][j] == 1):
+                if (grid[i - 1][j] == 0):
+                    s += 1
+                if (grid[i + 1][j] == 0):
+                    s += 1
+                if (grid[i][j + 1] == 0):
+                    s += 1
+                if (grid[i][j - 1] == 0):
+                    s += 1
+    return(s)
