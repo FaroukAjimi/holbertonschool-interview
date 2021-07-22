@@ -59,6 +59,8 @@ int lh;
 int rh;
 if (tree == NULL)
 return (1);
+if (!bst(tree))
+  return(0);
 if (bst(tree))
 {
 lh = height(tree->left);
